@@ -1,0 +1,79 @@
+<title>首页</title>
+<link rel='stylesheet' href='/style.css'>
+<h5>您的账户余额是
+  <span id="amount">&&&amount&&&</span>
+</h5>
+<button id='button'>打钱</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+  button.addEventListener('click', (e) => {
+
+    $.ajax({
+      url: 'http://localhost:9999/pay',
+      dataType: 'jsonp',
+      success: function (response) {
+        console.log(response  )
+      }
+    })
+  })
+</script>
+
+<!-- <script>
+
+  button.addEventListener('click',(e)=>{
+    let script = document.createElement('script')
+    let functionName = 'ddq'+parseInt(Math.random()*100000,10)
+    window[functionName] = = function (result){
+    alert('尝试')
+    alert(`我得到的结果是${result}`)
+  }
+    script.src = 'http://localhost:9999/pay?callbackName=' + functionName;
+    document.body.appendChild(script)
+    script.onload = function(e){
+      // alert('打钱成功')
+      // e.currentTarget.remove()
+    }
+    script.onerror = function(e){
+      alert('打钱失败')
+      // e.currentTarget.remove()
+    }
+  })
+  //srj方案
+</script> -->
+
+
+
+
+<!-- <script name='创建一个请求，但是没有办法创建post，是去get'>
+  button.addEventListener('click', (e) => {
+    let image = document.createElement('img')
+    image.src = '/pay'
+     //这样会不知道成功没有
+    image.onload = function () {
+      alert('打钱成功')
+      window.location.reload()
+      //amount.innerText = amount.innerText - 1  着种方法用户体验较好,给用户一个假内容
+    }
+    image.onerror = function () {
+      alert('打钱失败')
+    }
+  })
+  //img发请求法
+</script> -->
+
+<!-- <form action="/pay" method="POST">
+  <input type='text' name='number' value="1">
+  <input type="submit" value='付款'>
+</form> -->
+<!-- <script>
+  button.addEventListener('click',(a)=>{
+    let n = amount.innerText;
+    let number = parseInt(n,10);    //n是string类型,先转换
+    let newNumber = number - 1;
+    amount.innerText = newNumber;
+  })
+</script> -->
+<!-- <link rel="stylesheet" href="">
+<script></script>
+图片 -->
